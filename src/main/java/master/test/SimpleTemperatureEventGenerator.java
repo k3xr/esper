@@ -24,7 +24,7 @@ public class SimpleTemperatureEventGenerator {
 		int count = 0;
 
 		while (count < noe) {
-			TemperatureSensorEvent event = new TemperatureSensorEvent("sensorX", new Random().nextInt(100), new Date());
+			TemperatureSensorEvent event = new TemperatureSensorEvent("sensorX", new Random().nextInt(200), new Date());
 			System.out.println("sending " + event.getTemperature() + " at " + event.getTimestamp());
 
 			cepRT.sendEvent(event);

@@ -2,22 +2,23 @@ package master.test;
 
 import java.util.Map;
 
-public class AverageSubscriber {
+public class TemperatureSubscriber {
 
 	private String name;
 
-	public AverageSubscriber(String name) {
+	public TemperatureSubscriber(String name) {
 		this.name = name;
 	}
 
 	public void update(Map<String, Double> eventMap){
-		
-		Double avg = (Double) eventMap.get("avgtemp");
+
+		Double temp = (Double) eventMap.get("temperature");
 		
 		StringBuilder sb = new StringBuilder();
-		sb.append("--- Subscriber " + name + " - Average Temp = " + avg);
+		sb.append("--- Subscriber " + name + " - Temp = " + temp);
 		
 		System.out.println(sb.toString());
 
 	}
+
 }
