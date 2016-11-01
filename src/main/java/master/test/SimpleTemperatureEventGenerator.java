@@ -7,12 +7,12 @@ import com.espertech.esper.client.EPRuntime;
 
 public class SimpleTemperatureEventGenerator {
 
-	private int noe;
+	private int numberOfEvents;
 	private EPRuntime cepRT;
 	private long sleepTime;
 
-	public SimpleTemperatureEventGenerator(EPRuntime cepRT, long sleepTime, int noe) {
-		this.noe = noe;
+	public SimpleTemperatureEventGenerator(EPRuntime cepRT, long sleepTime, int numberOfEvents) {
+		this.numberOfEvents = numberOfEvents;
 		this.cepRT = cepRT;
 		this.sleepTime = sleepTime;
 	}
@@ -23,7 +23,7 @@ public class SimpleTemperatureEventGenerator {
 	public void startSendingTemperatureReadings() {
 		int count = 0;
 
-		while (count < noe) {
+		while (count < numberOfEvents) {
 			TemperatureSensorEvent event = new TemperatureSensorEvent("sensorX", new Random().nextInt(200), new Date());
 			System.out.println("sending " + event.getTemperature() + " at " + event.getTimestamp());
 
